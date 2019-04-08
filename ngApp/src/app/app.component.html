@@ -1,0 +1,43 @@
+<!-- -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"> Street art </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- router link call the componant of the path set in app routing -->
+      <a class="nav-link" routerLink="/streetarts" routerLinkActive="">Streetarts</a>
+      <!-- if loggedIn() send back true thene show the nav link-->
+      <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/newStreetart" routerLinkActive="">New Streetart</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/myStreetarts" routerLinkActive="">My Streetarts</a>
+
+    </ul>
+    <ul class="navbar-nav">
+      <!-- if loggedIn() send back true thene DON'T  show the nav link-->
+      <a class="nav-link grey" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="">Login</a>
+      <a class="nav-link col" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn()" style="cursor:pointer" (click)="_authService.logoutUser()">Logout</a>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="outlet">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <div class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>&copy; 2018 ROUSSET. Tout droits reservés.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

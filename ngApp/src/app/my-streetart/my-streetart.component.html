@@ -1,0 +1,18 @@
+<div class="col-12 p-0 m-0 ">
+  <div class="row col-11 ml-5 mx-auto mt-5">
+    <div class=" col-md-6 col-xl-4 mb-3" *ngFor="let streetarts of streetarts">
+      <div class="card">
+        <h4 class="card-title text-center p-1 bg-primary text-white" name="name">{{streetarts.streetartAutor}}</h4>
+        <div class="container row">
+          <img style="width: 270px ; height: 200px" src="{{streetarts.streetartPicture}}"  class="image mx-auto">
+        </div>
+        <div class="card-body text-center mb-0">
+          <div class="pl-4 row mx-auto">
+            <button (click)="getstreetartId(streetarts.streetartId)" routerLink="/updateStreetart" class="btn btn-primary col-3 m-1">Update</button>
+            <button (click)="removeMystreetart(streetarts.streetartId)" routerLink="/streetarts" class="btn btn-danger col_3 m-1">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

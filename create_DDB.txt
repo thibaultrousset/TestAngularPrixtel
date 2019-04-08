@@ -1,0 +1,25 @@
+CREATE DATABASE streetart;
+
+USE streetart;
+
+
+CREATE TABLE  user (
+  `userId` int(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `userEmail` varchar(20) NOT NULL,
+  `userPassword` varchar(20) NOT NULL
+);
+
+CREATE TABLE  streetart (
+  `streetartId` int(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `streetartAutor` varchar(200) NOT NULL,
+  `streetartPicture` varchar(200) NOT NULL,
+  `streetartCreator` int(100)
+);
+
+ALTER TABLE `streetart`
+  ADD CONSTRAINT `fk_commande` FOREIGN KEY (`streetartCreator`) REFERENCES `user` (`userId`);
+
+INSERT INTO `streetart` (`streetartId`, `streetartAutor`, `streetartPicture`, streetartCreator) VALUES
+(1, "Jace", "http://localhost:3000/static/img/gouzou1.jpg", 0),
+
+(2, The Cat Man, "http://localhost:3000/static/img/catMan1.jpg", 0);
