@@ -2,7 +2,7 @@
 
 # Project Title
 
-A web app share streetart
+A web app to share streetart
 
 ## Getting Started
 
